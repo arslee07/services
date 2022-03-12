@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  app:
+    image: inspircd/inspircd-docker
+    restart: always
+    volumes:
+      - /home/selfhost/inspircd/conf/:/inspircd/conf/
+    ports:
+      - 6667:6667
+    environment:
+      - INSP_NET_SUFFIX=.funpines.xyz
+      - INSP_NETWORK_NAME=FunPines
+      - INSP_ADMIN_NAME=arslee
+      - INSP_ADMIN_NICK=arslee
+      - INSP_ADMIN_EMAIL=support@arslee.me
+      - INSP_OPER_NAME=arslee
+      - INSP_OPER_PASSWORD_HASH=b0e8f44485ff3ab892ae370a3832bdf40df36cb32228c31f05cf37b93a92cc0b
+      - INSP_OPER_SSLONLY=no

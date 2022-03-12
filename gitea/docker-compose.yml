@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+        app:
+                image: gitea/gitea
+                restart: always
+                ports:
+                        - "3000:3000"
+                        - "3022:22"
+                volumes:
+                        - /home/selfhost/gitea:/data
+                        - /etc/timezone:/etc/timezone:ro
+                        - /etc/localtime:/etc/localtime:ro
